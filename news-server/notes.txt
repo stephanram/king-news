@@ -76,5 +76,10 @@ npm install --save-dev ts-node
     }
   }
 
-  //Restore all packages
-  npm install && npm start
+//Restore all packages
+npm install && npm start
+
+//To Kill process
+Run cmd.exe as 'Administrator':
+C:\Windows\System32>taskkill /F /IM node.exe
+SUCCESS: The process "node.exe" with PID 11008 has been terminated.

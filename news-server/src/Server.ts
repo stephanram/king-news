@@ -1,17 +1,17 @@
 import { GlobalAcceptMimesMiddleware, ServerLoader, ServerSettings } from "@tsed/common";
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var compress = require('compression');
-var cookieParser = require('cookie-parser');
-var methodOverride = require('method-override');
+import * as bodyParser from "body-parser";
+import * as compress from "compression";
+import * as cookieParser from "cookie-parser";
+import * as methodOverride from "method-override";
 
 const rootDir = __dirname;
 
 @ServerSettings({
   rootDir,
   acceptMimes: ["application/json"],
-  httpPort: 3000,
-  httpsPort: 4000
+  httpPort: 6000,
+  httpsPort: 6500,
+  
 })
 export class Server extends ServerLoader {
   /**
