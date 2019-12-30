@@ -1,0 +1,15 @@
+//Check node
+node --version or install node in machine
+
+restart system
+npm install -g "@angular/cli" --install angular
+npm install --restore packages
+
+//Add new app
+ng new app news-server
+
+//generating service
+ng generate service employee
+ 
+//generating component
+ng generate component employee
