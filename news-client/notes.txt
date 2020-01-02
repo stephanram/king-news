@@ -13,3 +13,15 @@ ng generate service employee
  
 //generating component
 ng generate component employee
+
+//For adding bootstrap
+npm install bootstrap@3 jquery --save
+//include them in angular.json
+"styles": [
+    "src/styles.css",
+    "../news-client/node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+    "../news-client/node_modules/jquery/dist/jquery.min.js",
+    "../news-client/node_modules/bootstrap/dist/js/bootstrap.min.js"
+]

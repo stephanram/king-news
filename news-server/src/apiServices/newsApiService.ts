@@ -11,14 +11,12 @@ export class newsApiService {
     public getHeadLines(country:string): any {
         return new Promise((resolve, reject) => {
             const signature: string = '/top-headlines';
-            const defaultCountry: string = 'in';
-            var param = country ? country : defaultCountry
 
             const options = {
                 uri: this.baseUrl + this.version + signature,
                 qs: {
                     apiKey: this.apiKey,
-                    country: param
+                    country: country
                 },
                 method: 'GET',
                 headers: {

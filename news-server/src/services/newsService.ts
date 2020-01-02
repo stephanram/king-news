@@ -2,10 +2,13 @@ import { newsApiService } from "../apiServices/newsApiService";
 import { article } from '../models/article';
 
 export class newsService {
-    async getHeadlines(): Promise<any> {
+    async getHeadlines(countryCode: string): Promise<any> {
         try {
+            const defaultCountry: string = 'us';
+            var param = countryCode ? countryCode : defaultCountry
+
             var service = new newsApiService();
-            var result = await service.getHeadLines('in');
+            var result = await service.getHeadLines(param);
             var data = this.transformObject(result);
             return data;
         }

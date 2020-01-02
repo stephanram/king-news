@@ -3,14 +3,15 @@ import * as bodyParser from "body-parser";
 import * as compress from "compression";
 import * as cookieParser from "cookie-parser";
 import * as methodOverride from "method-override";
+import * as cors from "cors";
 
 const rootDir = __dirname;
 
 @ServerSettings({
   rootDir,
   acceptMimes: ["application/json"],
-  httpPort: 6000,
-  httpsPort: 6500,
+  httpPort: 8080,
+  httpsPort: 5000,
   
 })
 export class Server extends ServerLoader {
@@ -25,6 +26,7 @@ export class Server extends ServerLoader {
       .use(compress({}))
       .use(methodOverride())
       .use(bodyParser.json())
+      .use(cors())
       .use(bodyParser.urlencoded({
         extended: true
       }));
